@@ -19,12 +19,19 @@ h1{
 h2{
   font-size: 32px;
   line-height: 1.5;
+  margin-left: 30px;
+}
+
+
+nav{
+  background-color: #ffffff;
+  padding: 10px 0; 
+  text-align: center;
 }
 
 nav li{
-  display:inline;
-  padding-right:20px;
-
+  display: inline;
+  padding-right: 20px;
 }
 
 nav a{
@@ -37,28 +44,21 @@ nav a:hover{
   text-decoration: underline;
 }
 
-  
+/*.container{
+  display: grid;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 15px;
+}*/
 
 footer{
   background-color: black;
   color: white;
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
-  grid-row: 7 / auto;   /*Can you rewrite it?*/
-  padding-top: 30px;
   text-align: center;
+　bottom: 0;
+  margin-top: 30px;
 }
 
-nav{
-  background-color: #ffffff;
-  padding: 20px 0; 
-  text-align: left;
-
-  /*Your code here*/
-  /*Span the top row*/
-  grid-column: 1 / -1;
-  grid-row: 1 / span 1;
-
-}
 
 header{
   background-attachment: fixed; /* Parallax effect */     
@@ -67,51 +67,96 @@ header{
   background-size: cover;       /* Parallax effect */
   color: white;
   height: 400px;                /* Parallax effect */
-
-  /* Your code here */
-  /* Set background-image to header.jpg in the images folder */
-  /* Span one row */
-  background-image: url("../images/header.jpg");
-  grid-column: 1 / -1;
+  background-image: url("../images/header.jpg"); 
   background-color: #575757;
 
+  position: relative;
+  box-sizing:border-box;
+  z-index:1;
 }
-
+/*header:after{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(2px);
+    z-index: 2;
+}*/
 header p{
   color: white;
   font-size: 24px;
   padding: 0 100px;
   text-align: center;
+  backdrop-filter: blur(3px);
 }
 
-.container{
-  /*Your code here  */
-  /* See documentation for mobile view */
-  display: grid;
-  grid-template-columns: 100px 400px 100px;
-  grid-template-rows: auto auto auto;
-  grid-row-gap: 15px;
+.blur{
+  color: white;
+  backdrop-filter: blur(3px);
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+/*  background: inherit;
+  position: relative;*/
 }
+
+a.skip{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: black;
+  text-decoration-style: solid;
+}
+
+
 
 .text-block{
   background-color: rgba(255, 255, 255, .8);
-  /*box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);*/ 
   padding: 30px;
-  /*Your code here:*/
-  /*Align the content in the center */
-  text-align: center;
+  padding-left: 40px;
+  text-align: left;
   align-self: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 .about, .experience, .work, .contact{
-  grid-column: 2 / span 1;
+
+}
+
+.about{
+  display: grid;
+  text-align: left;
+/*  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 15px;*/
+}
+.container.experience{
+  /*display: grid;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 15px;*/
+  
 }
 
 
+
 .about-image{
-  text-align: center;
-  grid-column: 2 / span 1;
+  float: right;
+/*  grid-column: 2 / span 1;*/
+  padding-right: 40px;
+  padding-top: 30px;
 }
 
 .contact_me{
@@ -119,35 +164,25 @@ header p{
 }
 
 
-/*#pic{
-  display: flex;
-  flex-direction: column;
-  flex-basis: 400px;
-  margin: 12px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}*/
-
 .pic{
   grid-column: 2 / span 1;
 }
 
 
 /*<!-- TimeLine -->*/
-
 .timeline-small {
     /*max-width: 350px;
     max-height: 630px;*/
-    grid-column: 2 / span 1;
+    /*grid-column: 2 / span 2;*/
     overflow: hidden;
-    box-shadow: 0 0 20px #a0a0a0;
+    box-shadow: 0 0 10px #a0a0a0;
 }
 .timeline-small-body ul {
     padding: 1em 0 0 2em;
     margin: 0;
     list-style: none;
     position: relative;
+    text-align: left;
 }
 .timeline-small-body ul::before {
     content: ' ';
@@ -163,6 +198,7 @@ header p{
     display: inline-block;
     margin: 1em 0;
     vertical-align: top;
+
 }
 .timeline-small-body .bullet {
     width: 1rem;
@@ -173,10 +209,12 @@ header p{
     z-index: 1;
     margin-right: 1rem;
     margin-top: 7%;
+
 }
 .timeline-small-body .bullet.black {
     background-color: white;
     border: 3px solid #077aed;
+
 }
 .timeline-small-body .date {
     width: 27%;
@@ -186,6 +224,7 @@ header p{
 }
 .timeline-small-body .desc {
     width: 50%;
+
 }
 .timeline-small-body h3 {
     font-size: 0.9em;
@@ -329,12 +368,10 @@ input[type=text], select {
 
 @media all and (min-width: 800px){
 
-  .container{
-  /*Your code here */
-  /* See documentation for desktop view */ 
+/*  .container{
   grid-template-columns: 50px auto auto auto auto 50px;
   grid-template-rows: auto auto;
-  }
+  }*/
 
   nav{
     background-color: #ffffff;
@@ -342,10 +379,8 @@ input[type=text], select {
     padding: 35px 0px;
     align-self: center;
   }
-
+/*
   .header-image{
-    /*Your code here */
-    /* See documentation for desktop view */ 
     grid-column: 1 / span 2;
     }
 
@@ -370,27 +405,11 @@ input[type=text], select {
     align-self: flex-start;
   }
 
-.timeline-small-body .bullet {
-    margin-top: 1em;
-}
-
-.timeline-small-body ul {
-    padding: 1em 0 0 2em;
-}
-.timeline-small-body .date {
-    width: 11.5%;
-    text-align: left;
-}
-.timeline-small-body .desc {
-    width: 50%;
-    margin-left: 14em;
-}
-.timeline-small-body h3 {
-    text-align: left;
-}
-.timeline-small-body h4 {
-    text-align: left;
-}
+	.timeline-small-body .bullet {
+	    margin-top: 1em;
+	}*/
+	
+	/*  */
 
 /*.pic{
   grid-column: 2 / span 4;
@@ -401,13 +420,18 @@ figure.w3ls-gallery.img-responsive{
   justify-content: center;
 }*/
 
-
-
 }  /*End the media query*/
 
 @media screen and (prefers-reduced-motion: reduce){
   html{
       scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+}
+
+@media print { 
+  body {
+    background-image: none;
   }
 
 
