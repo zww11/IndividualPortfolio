@@ -12,8 +12,10 @@
     <a class = "skip" href="#contact">Skip to Main Content</a>
     <main>
     <div class="container">
+      <div class="part">
+    <img src="images/logo.png" alt="logo" id = "logo">
       <nav>
-        <ul>
+        <ul  class="nav_links">
           <li><a href="index.html">Main Page</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="experience.html">Working Experience</a></li>
@@ -21,44 +23,75 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
 
     <a id="contact"></a>
-        <h2>Contact Me</h2>
-  <div class="contact text-block" >
-    <form class="form_edit"> 
-      <label class="word" for="name" style="margin-left: 0; text-align: left;">Your Name</label>
-      <div class="form-group">
-        <input type="text" class="form-control" id="InputText" placeholder="Name">
-      </div>
-      <label for="email">Your Email</label>
-      <div class="form-group">
-        <input type="text" class="form-control" id="InputText" placeholder="Email">
-      </div>
-      <label for="message">Your Message</label>
-      <div class="form-group">
-        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-      </div>
-      <button type="submit" class="btn-rabbit submit">Submit</button>
-      </form>
-  </div>
 
-  <div class="contact_me text-block" style="box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2)">
-    <form>
-    <p style="text-align: left; margin-bottom: 10px">My Contact Info</p>
-        <ul style="text-indent: 40px; text-align: left">
-          <li style="margin-bottom: 5px">Phone Number: </li>
-          <li>Email: </li>
-        </ul>
-      </form>
-  </div>
+        <h1>Keep In Touch</h1>
+    <section id="contact2">      
+      <div class="contact-form">
+          <div class="contact-form-area">          
+              <div class="contact-block">
+                <h2>Contact Form</h2>
+                <form id="contactForm">
+                      
+                      <div class="write"> 
+                        <label for="name">Name</label><br/>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
+                      </div>
+                      <div class="write">
+                        <label for="email">Email</label><br/>
+                        <input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+                      </div>
+                      <div class="write">
+                        <label for="msg_subject">Subject</label><br/>
+                        <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
+                      </div>
+                      <div class="write">
+                        <label for="message">Message</label><br/>
+                        <textarea class="form-control" id="message" placeholder="Your Message" rows="5" data-error="Write your message" required></textarea>
+                      </div>
+                      <div class="submit-button">
+                        <button id="submit" type="submit">Send Message</button>
+                      </div>
+                           
+                </form>
+              </div>
+          
+              <br/> <br/>
+              <div class="footer-right-area">
+                <h2>Contact Address</h2>
+                <div class="footer-right-contact">
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <!-- <i class="fa fa-map-marker"></i> -->
+                    </div>
+                    <p>Ann Arbor, MI</p>
+                  </div>
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <!-- <i class="fa fa-envelope"></i> -->
+                    </div>
+                    <p><a href="mailto:wzeyao@umich.edu">wzeyao@umich.edu</a></p>
+                  </div>
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <p><a href="#">+1 (617) 982 9759</a></p>
+                    
+                  </div>
+                </div>
+              </div>
+     
 
-  
-
-
+          </div>
+        
+      </div>   
+    </section>
 
     <footer>
-      <p>University of Michigan School of Information <br/>
-        &copy; Zeyao Wang</p>
+      <p><br/>&copy; Zeyao Wang<br/><br/></p>
     </footer>
 
     </div>
