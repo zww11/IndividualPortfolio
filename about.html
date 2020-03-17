@@ -7,13 +7,23 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="images/logo.png">
     <title>About Me</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160825388-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160825388-1');
+</script>
+
   </head>
   <body>
     <a class = "skip" href="#about">Skip to Main Content</a>
     <main>
     <div class="container">
       <div class="part">
-        <img src="images/logo.png" alt="logo" id = "logo">
+        <a href="index.html"><img src="images/logo.png" alt="logo" id = "logo"><a>
           <nav>
             <ul  class="nav_links">
               <li><a href="index.html">Main Page</a></li>
@@ -47,14 +57,14 @@
         <div class="about text-block" >
            <div class="about text-block" style="box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1)">
                <h2>Education</h2>
-               <p><a href="https://umich.edu/" target="_blank">Univeristy of Michigan, Ann Arbor</a></p>
-               <p><a>Belmont High School, MA</a></p>
+               <p style="margin-top: 10px;"><a href="https://umich.edu/" target="_blank">Univeristy of Michigan, Ann Arbor</a></p>
+               <p style="margin-top: 5px;"><a>Belmont High School, MA</a></p>
                     
            </div>
            <br/><br/>
            <div class="about text-block" style="box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1)">
                <h2>Skills</h2>
-               <ul>
+               <ul style="margin-top: 10px;">
                  <li>Python(API, Django, NLP)</li>
                  <li>SQL</li>
                  <li>Machine Learning</li>
